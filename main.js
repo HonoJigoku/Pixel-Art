@@ -9,14 +9,21 @@ var pixelArt = {
 
 		var self = this;
 
+		this.init_tools();
+
 		this.init_draw();
 
 		this.$draw.on('mousedown', function(e) {
 
-			var x = Math.floor(e.offsetX/self.pixel_dimension)+1;
-			var y = Math.floor(e.offsetY/self.pixel_dimension)+1;
+			var offset = self.$draw.offset(),
+				dx = e.clientX - parseInt(offset.left),
+				dy = e.clientY - parseInt(offset.top);
 
-			var p = new Pixel(x,y,self.pixel_dimension, '#f00');
+			var x = Math.floor(dx/self.pixel_dimension)+1;
+			var y = Math.floor(dy/self.pixel_dimension)+1;
+
+
+			var p =  new PixelColor(x,y,self.pixel_dimension, color);	
 
 			self.pixels.push(p);
 
@@ -37,12 +44,15 @@ var pixelArt = {
 			height :(h*this.pixel_dimension)+'px',
 			right:0,
 		})
+	},
 
-		console.log(w,h);
-	}
+	init_tools: function() {
+		var t = new Tools(tools);
+	}, 
 }
 
 $(function(){
+	pixelArt.init_tools();	
 	pixelArt.init();
 	pixelArt.init_draw();	
 })

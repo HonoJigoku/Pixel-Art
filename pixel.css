@@ -47,11 +47,11 @@ body {
 }
 
 #tools {
-	position: absolute;
+	margin: auto auto;
+	margin-top: 20px;
 	border: 3px solid #000;
-	left: -17%;
-	width: 15%;
-	height: 600px;
+	width: 60%;
+	height: 150px;
 	background-color: #ffe9c5;
 
 	-moz-box-shadow: 10px 10px 1px 0px #aaa;
@@ -63,4 +63,37 @@ body {
 
 .pixel {
 	position: absolute;
+}
+#color {
+	text-align: center;
+	margin: auto auto;
+	margin-top: 100px;
+}
+
+#toolbar > .pen{border: 1px solid #fff;}
+
+#toolbar > .pen.pen-white{background-color: #fff;}
+#toolbar > .pen.pen-blue{background-color: blue;}
+#toolbar > .pen.pen-purple{background-color: #A54BFF;}
+#toolbar > .pen.pen-yellow{background-color: yellow;}
+#toolbar > .pen.pen-black{background-color: #000;}
+#toolbar > .pen.pen-green{background-color: green;}
+#toolbar > .pen.pen-pink{background-color: #FF9FE7;}
+#toolbar > .pen.pen-red{background-color: red;}
+
+#toolbar {
+  position: absolute;
+  right: 2em;
+  top: 2em;
+  bottom: 0;
+  text-align: center;
+}
+
+#toolbar > .pen {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  display: block;
+  cursor: pointer;
+  margin: .5em;
 }

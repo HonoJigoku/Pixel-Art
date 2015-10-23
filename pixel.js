@@ -16,7 +16,7 @@ function Pixel(x, y, size, color) {
 	pixelArt.$draw.append(this.$el);
 }
 
-Pixel.prototype= {
+Pixel.prototype = {
 
 	/**
 	 * Changer la position du pixel
@@ -51,8 +51,10 @@ Pixel.prototype= {
 	 */
 	set_color : function(color) {
 		this.color 	= color;
+		
 		this.$el.css({
 			backgroundColor : this.color,
 		})
+
 	}
 };
